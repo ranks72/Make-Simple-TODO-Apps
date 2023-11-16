@@ -130,8 +130,8 @@ function removeTaskFromCompleted(todoID) {
 }
 
 function findTodoIndex(todoId) {
-  for (const index of todos) {
-    if (todos[index] === todoId) {
+  for (const index in todos) {
+    if (todos[index].id === todoId) {
       return index;
     }
   }
