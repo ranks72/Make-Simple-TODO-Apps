@@ -138,3 +138,12 @@ function findTodoIndex(todoId) {
 
   return -1;
 }
+
+function undoTaskFromCompleted(todoID) {
+  const todoTarget = findTodo(todoID);
+
+  if (todoTarget == null) return;
+
+  todoTarget.isCompleted = false;
+  document.dispatchEvent(new Event(RENDER_EVENT));
+}
